@@ -20,8 +20,9 @@ public class ViewServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String uri = request.getRequestURI();
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF"+uri+".jsp");
+		rd.forward(request, response);
 	}
 
 }

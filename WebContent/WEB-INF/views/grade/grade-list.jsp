@@ -19,12 +19,18 @@
 		</tr>
 	</c:if>
 	<c:forEach items ="${gradeList}" var="grade">
-		<tr>
+		<tr onclick="goView(${grade.grd_no})">
 			<td>${grade.grd_no}</td>
 			<td>${grade.grd_name}</td>
 			<td>${grade.grd_desc}</td>
 		</tr>
 	</c:forEach>
 </table>
+<script>
+function goView(grd_no)
+{
+	location.href='/grade/grade-view?grd_no=' + grd_no;
+	}
+</script>
 </body>
 </html>

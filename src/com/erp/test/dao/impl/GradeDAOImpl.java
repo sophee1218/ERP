@@ -54,9 +54,9 @@ public class GradeDAOImpl implements GradeDAO
 			con = Conn.open();
 			String sql = "update grade set grd_name=?, grd_desc=? where grd_no=? ";
 			ps=con.prepareStatement(sql);
-			ps.setInt(1, (int)grade.get("grd_name"));
+			ps.setString(1, grade.get("grd_name").toString());
 			ps.setString(2, grade.get("grd_desc").toString());
-			ps.setString(3, grade.get("grd_no").toString());
+			ps.setInt(3, Integer.parseInt(grade.get("grd_no").toString()));
 			result = ps.executeUpdate();
 			con.commit();
 			
@@ -107,18 +107,18 @@ public class GradeDAOImpl implements GradeDAO
 		try
 		{
 			con = Conn.open();
-			String sql = "select grd_ no, grd_name, grd_desc from grade where grd_no=? ";
+			String sql = "select grd_no, grd_name, grd_desc from grade where grd_no=? ";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, "grd_no");
+			ps.setInt(1,(int)grade.get("grd_no"));
 			
 			rs = ps.executeQuery();
 			if (rs.next())
 				
 			{
 				Map<String,Object> map = new HashMap<>();
-				map.put("grd_no", rs.getObject("grd_no"));
-				map.put("grd_name", rs.getObject("grd_name"));
-				map.put("grd_desc", rs.getObject("grd_desc"));
+				map.put("grd_no", rs.getInt("grd_no"));
+				map.put("grd_name", rs.getString("grd_name"));
+				map.put("grd_desc", rs.getString("grd_desc"));
 				return map;
 				
 			}
