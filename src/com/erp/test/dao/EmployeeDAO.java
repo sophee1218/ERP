@@ -3,7 +3,7 @@ package com.erp.test.dao;
 import java.util.List;
 import java.util.Map;
 
-public interface EmloyeeDAO
+public interface EmployeeDAO
 {
 	int insertEmployee(Map<String,Object> grade);
 	int updateEmployee(Map<String,Object> grade);
