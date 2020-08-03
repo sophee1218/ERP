@@ -30,6 +30,15 @@
    	<url-pattern>/employee/*</url-pattern>
    </servlet-mapping>
    
+   <servlet>
+   <servlet-name>SelectAddressServlet</servlet-name>
+   	<servlet-class>com.erp.test.servlet.SelectAddressServlet</servlet-class>
+   	</servlet>
+   <servlet-mapping>
+   	<servlet-name>SelectAddressServlet</servlet-name>
+   	<url-pattern>/div/*</url-pattern>
+   </servlet-mapping>
+   
    <jsp-config>
    	<jsp-property-group>
    		<url-pattern>*.jsp</url-pattern>
