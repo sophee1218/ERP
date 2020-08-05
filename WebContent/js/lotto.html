@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+var lottos = [];
+for(var i=1;i<=6;i++){
+	var lotto = Math.floor(Math.random()*45+1);
+	lottos.push(lotto);
+	
+	for(var j=i-1; j>=0; j--)
+		{
+		if (lottos[j]==lottos[i])
+			{
+			i--;
+			}
+		}
+}
+document.write(lottos + '');
+</script>
+</body>
+</html>

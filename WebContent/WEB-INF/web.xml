@@ -39,6 +39,15 @@
    	<url-pattern>/div/*</url-pattern>
    </servlet-mapping>
    
+   <servlet>
+   <servlet-name>AjaxServlet</servlet-name>
+   	<servlet-class>com.erp.test.servlet.AjaxServlet</servlet-class>
+   	</servlet>
+   <servlet-mapping>
+   	<servlet-name>AjaxServlet</servlet-name>
+   	<url-pattern>/ajax/*</url-pattern>
+   </servlet-mapping>
+   
    <jsp-config>
    	<jsp-property-group>
    		<url-pattern>*.jsp</url-pattern>

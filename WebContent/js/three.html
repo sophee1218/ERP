@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function three()
+		{
+			var max = document.querySelector('#maxNum').value;
+			var str = "<table border=\"1\">";
+			for (var i = 1; i <= max; i++)
+			{
+				
+				if (i % 10 == 1)
+				{
+					str += '<tr>';
+				}
+				var numStr = i+'';
+				if(numStr.indexOf('3')!=-1|| numStr.indexOf('6')!=-1 || numStr.indexOf('9')!=-1){
+					
+					numStr ='짝';
+				} 
+					str+='<td>' + numStr +'</td>';
+
+				if (i % 10 == 0)
+				{
+					str += "</tr>";
+				}
+
+			}
+			str += "</table>"
+			document.querySelector('#rDiv').innerHTML = str;
+		}
+	</script>
+	<input type="number" id="maxNum">
+	<button onclick="three()">삼육구</button>
+	<div id="rDiv"></div>
+</body>
+</html>
