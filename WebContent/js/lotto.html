@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,17 @@
 <script>
 
 var lottos = [];
+
 for(var i=1;i<=6;i++){
 	var lotto = Math.floor(Math.random()*45+1);
-	lottos.push(lotto);
-	
-	for(var j=i-1; j>=0; j--)
-		{
-		if (lottos[j]==lottos[i])
-			{
+	if(lottos.indexOf(lotto)!=-1){
 			i--;
-			}
-		}
+			continue;
+	
+		}lottos.push(lotto);
 }
-document.write(lottos + '');
+lottos.sort();
+document.write(lottos);
 </script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+td {
+	text-align: center;
+	cursor: pointer;
+	width: 40px;
+	height: 40ps;
+}
+
+td:hover {
+	background-color: pink;
+	color: purple;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div id="rDiv"></div>
+	<input type="number" id="maxNum">
+	<button onclick="startGame(this)">게임시작</button>
+	<script>
+		function startGame()
+		{
+			alert('게임을 시작하지!');
+			var maxNum = document.querySelector('#maxNum').value;
+			var str = '<table border="1">';
+			str += '<tr>';
+			for (var i = 1; i <= maxNum * maxNum; i++)
+			{
+				str += '<td>' + i + '</td>'
+					if(i%maxNum==0){
+							str += '</tr>'
+						}
+				
+			}
+			str += '</table>';
+			document.querySelector('#rDiv').innerHTML = str;
+			var tdObjs = document.querySelectorAll('td');
+			var num = Math.floor(Math.random()*(maxNum*maxNum))+1;
+			for (var i = 0; i <tdObjs.length ; i++)
+			{
+
+				tdObjs[i].onclick = function(){
+					if (this.innerText == num)
+					{
+						alert('찾았다 폭탄!!!!!!!!');
+					} else
+					{
+						this.innerText = 'X';
+					}
+				}
+
+			}
+
+			
+
+		}
+	</script>
+</body>
+</html>

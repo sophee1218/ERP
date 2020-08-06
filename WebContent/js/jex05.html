@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.5.1.js"></script>
+
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	position: absolute;
+}
+</style>
+</head>
+<body>
+<div>나 잡아봐랑~</div>
+<script>
+$('div').mouseenter(function(){
+	$(this).animate({left:'102px'});
+});
+
+</script>
+</body>
+</html>

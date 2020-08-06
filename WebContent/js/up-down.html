@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="number" id="maxNum">
+<button onclick="startGame()">게임시작</button>
+<div id="rDiv"></div>
+<script>
+var ranNum = 0;
+function startGame(){
+	var maxNum = document.querySelector('#maxNum').value;
+	ranNum = Math.floor(Math.random()*maxNum)+1;
+	var html = '<input type="number" id="check"><button onclick="checkNum()">맞냐?</button>';
+	document.querySelector('#rDiv').innerHTML = html;
+}
+function checkNum(){
+	var checkNum = document.querySelector('#check').value;
+	if(ranNum>checkNum){
+		alert('up!!');
+	}else if(ranNum<checkNum){
+		alert('down!!');
+	}else{
+		alert('마셔라~~~~~~~');
+	}
+}
+</script>
+</body>
+</html>

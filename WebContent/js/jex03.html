@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div id="d1">저는 div에요~~</div>
+<button>d1숨김</button>
+<script>
+$('button').click(function(){
+	if(this.innerText=='d1숨김'){
+	$('#d1').slideUp(300);
+	this.innerText='d1꺼냄';
+	}else{
+		$('#d1').slideDown(300);
+		this.innerText='d1숨김';
+	}
+})
+</script>
+</body>
+</html>
